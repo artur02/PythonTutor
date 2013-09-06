@@ -6,7 +6,7 @@
     <ProjectGuid>e4e66100-702d-4624-b3a5-e2b11e0d51f9</ProjectGuid>
     <ProjectHome>
     </ProjectHome>
-    <StartupFile>02Comprehension.py</StartupFile>
+    <StartupFile>01HelloWorld.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>

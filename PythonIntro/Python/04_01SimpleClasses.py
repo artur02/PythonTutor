@@ -5,16 +5,16 @@ from abc import abstractmethod
 
 class Counter(object):
     def __init__(self):
-        self.count = 0
+        self._count = 0
 
     def increment(self):
-        self.count += 1
+        self._count += 1
 
     def decrement(self):
-        self.count -=1
+        self._count -=1
 
     #def __str__(self):
-    #    return str(self.count)
+    #    return str(self._count)
 
 counter1 = Counter()
 counter2 = Counter()
