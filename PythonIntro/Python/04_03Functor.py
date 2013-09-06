@@ -32,13 +32,14 @@ class Sorter(object):
 
         return self._items
 
-items = [3,7,4,9,5,2,6,1]
-print("items: ", items)
+if __name__ == "__main__":
+    items = [3,7,4,9,5,2,6,1]
+    print("items: ", items)
 
-sorter = Sorter(list(items), IntComparator())
-result = sorter.Sort()
-print("items up: ", result)
+    sorter = Sorter(list(items), IntComparator())
+    result = sorter.Sort()
+    print("items up: ", result)
 
-sorter2 = Sorter(list(items), IntComparator(Direction.Down))
-result2 = sorter2.Sort()
-print("items down: ",result2)
+    sorter2 = Sorter(list(items), IntComparator(Direction.Down))
+    result2 = sorter2.Sort()
+    print("items down: ",result2)

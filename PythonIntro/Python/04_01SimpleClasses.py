@@ -16,16 +16,18 @@ class Counter(object):
     #def __str__(self):
     #    return str(self._count)
 
-counter1 = Counter()
-counter2 = Counter()
 
-counter1.increment()
-counter1.increment()
-counter1.decrement()
-counter2.decrement()
-counter2.decrement()
-counter2.decrement()
-counter1.increment()
+if __name__ == "__main__":
+    counter1 = Counter()
+    counter2 = Counter()
 
-print("counter1: ", counter1)
-print("counter2: ", counter2)
+    counter1.increment()
+    counter1.increment()
+    counter1.decrement()
+    counter2.decrement()
+    counter2.decrement()
+    counter2.decrement()
+    counter1.increment()
+
+    print("counter1: ", counter1)
+    print("counter2: ", counter2)

@@ -19,11 +19,13 @@ class Duck(Animal, Talker):
     def talk(self):
         return "Quack"
 
-Animal.register(Duck)
-Talker.register(Duck)
 
-#animal = Animal()
-duck = Duck()
+if __name__ == "__main__":
+    Animal.register(Duck)
+    Talker.register(Duck)
 
-print("Duck average weight: ", duck.getAvgWeight())
-print("Duck talks: ", duck.talk())
+    #animal = Animal()
+    duck = Duck()
+
+    print("Duck average weight: ", duck.getAvgWeight())
+    print("Duck talks: ", duck.talk())
