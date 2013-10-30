@@ -8,10 +8,8 @@ Created on Fri Oct 25 14:13:25 2013
 import pandas as pd
 import httplib
 
-frame = pd.read_hdf("processed_full.hdf", "stat")
 
-
-def hostCount():
+def hostCount(frame):
     grpHost = frame.groupby("Host")
     return grpHost.Host.count()
 
@@ -20,27 +18,29 @@ def hostCountDesc(hostCount):
     return hostCount.order(ascending=False)
 
 
-def setStatusDType():
+def setStatusDType(frame):
     frame.Status = frame.Status.astype(int)
 
 
-def setResponseSizeDType():
+def setResponseSizeDType(frame):
     frame.ResponseSize.replace(['-'], 0, inplace=True)
     frame.ResponseSize = frame.ResponseSize.astype(int)
 
 
-def hostsWithResponseSize0():
+def hostsWithResponseSize0(frame):
     return frame[frame.ResponseSize == 0].Host.drop_duplicates()
 
 
-def statusHistogram():
+def statusHistogram(frame):
     frame.Status.hist()
 
 
-def statusMapping():
+def statusMapping(frame):
     return frame.Status.map(lambda x: httplib.responses[x])
 
 
 if __name__ == "__main__":
-    hostCount = hostCount()
+    frame = pd.read_hdf("processed_full.hdf", "stat")
+
+    hostCount = hostCount(frame)
     print hostCount
